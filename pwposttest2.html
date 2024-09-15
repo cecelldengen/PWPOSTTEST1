@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 1</title>
+    <style>
+        /* Box Model and General Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f8e9; /* Background hijau muda untuk halaman */
+            color: #333; /* Warna teks utama */
+        }
+        table {
+            width: 90%;
+            max-width: 1000px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff; /* Background putih untuk tabel */
+            border-radius: 10px; /* Border radius untuk sudut tabel */
+            overflow: hidden; /* Menghindari overflow di sudut tabel */
+        }
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 2px solid #e0e0e0;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #00796b; /* Background teal untuk header tabel */
+            color: #ffffff; /* Warna teks putih untuk header */
+            font-size: 1.1em;
+        }
+        td {
+            background-color: #ffffff; /* Background putih untuk sel tabel */
+            color: #555; /* Warna teks lebih gelap untuk kontras */
+        }
+        img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #00796b; /* Border teal di sekitar gambar */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow ringan di sekitar gambar */
+        }
+        input[type="date"],
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #004d40; /* Border teal gelap untuk input */
+            border-radius: 5px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1em; /* Ukuran font untuk input */
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .footer {
+            background-color: #b2dfdb; /* Background teal muda untuk footer */
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #00796b; /* Border atas footer */
+        }
+        .footer b {
+            color: #004d40; /* Warna teks bold di footer */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            color: #004d40; /* Warna teks gelap untuk item list */
+            font-size: 1em;
+        }
+        a {
+            color: #00796b; /* Warna tautan teal */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #004d40; /* Warna tautan saat hover */
+        }
+        /* Header tabel (judul) */
+        .table-title {
+            background-color: #004d40; /* Background teal gelap untuk baris judul */
+            color: #ffffff; /* Warna teks putih untuk baris judul */
+            text-align: center;
+            padding: 15px 0;
+        }
+        .table-title img {
+            width: 150px;
+            border-radius: 10px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            th {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #00796b;
+                color: #ffffff;
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 1.2em;
+            }
+            td {
+                border-bottom: 2px solid #e0e0e0;
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                background-color: #00796b;
+                color: #ffffff;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tabel Container -->
+    <table>
+        <thead>
+            <!-- Header Content -->
+            <tr class="table-title">
+                <th colspan="4">
+                    <img src="logo-resto.jpeg" alt="logo-resto">
+                    <p><u>Bukti Pemesanan</u></p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" data-label="Nama Pelayan">Nama Pelayan: <b>Chaelse Dengen</b></td>
+                <td colspan="2" data-label="Tanggal Pemesanan">Tanggal Pemesanan: <input type="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2" data-label="Nama Pemesan">Nama Pemesan: <b>Abdullah Azam</b></td>
+                <td colspan="2" data-label="Alamat Pemesan">Alamat Pemesan: Jl. Merdeka No. 15, Kota Balikpapan</td>
+            </tr>
+            <!--End Header Content-->
+            <!--Main Content-->
+            <tr>
+                <th>Nama Menu</th>
+                <th>Jumlah</th>
+                <th>Harga Satuan</th>
+                <th>Total Harga</th>
+            </tr>
+            <tr>
+                <td data-label="Nama Menu"><img src="nasi-goreng.jpeg" alt="Nasi Goreng Spesial"><br>Nasi Goreng Spesial</td>
+                <td data-label="Jumlah"><input type="number" value="1"> porsi</td>
+                <td data-label="Harga Satuan">Rp 25.000</td>
+                <td data-label="Total Harga">Rp 25.000</td>
+            </tr>
+            <tr>
+                <td data-label="Nama Menu"><img src="es-teh-manis.jpeg" alt="Es Teh Manis"><br>Es Teh Manis</td>
+                <td data-label="Jumlah"><input type="number" value="1"> gelas</td>
+                <td data-label="Harga Satuan">Rp 5.000</td>
+                <td data-label="Total Harga">Rp 5.000</td>
+            </tr>
+            <tr>
+                <th colspan="3">Total Pesanan</th>
+                <td>Rp 30.000</td>
+            </tr>
+            <tr>
+                <th colspan="3">Pajak</th>
+                <td>Rp 3.000</td>
+            </tr>
+            <tr>
+                <th colspan="3">Total Tagihan</th>
+                <td>Rp 32.000</td>
+            </tr>
+            <!--End Main Content-->
+            <!--Footer Content-->
+            <tr>
+                <td colspan="4" class="footer">
+                    <b>Metode Pembayaran:</b><br>
+                    <input type="radio" name="E-Money" value="E-Money1"> Bank BCA
+                    <input type="radio" name="E-Money" value="E-Money2"> Bank BRI
+                    <input type="radio" name="E-Money" value="E-Money3"> OVO
+                    <input type="radio" name="E-Money" value="E-Money4"> Gopay
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="footer">
+                    <ul>
+                        <li>Nama: Chaelse Dengen</li>
+                        <li>NIM: 2309106003</li>
+                        <li>Praktikum Web: <a href="https://classroom.google.com/c/NzA1MzMyNzkzODU2/a/NzExMzgzNjYzOTIz/details">Posttest 1</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <!--End Footer Content-->
+        </tbody>
+    </table>
+</body>
+</html>

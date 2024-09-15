@@ -1,0 +1,133 @@
+/* Box Model and General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f8e9; /* Background hijau muda untuk halaman */
+    color: #333; /* Warna teks utama */
+}
+table {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* Background putih untuk tabel */
+    border-radius: 10px; /* Border radius untuk sudut tabel */
+    overflow: hidden; /* Menghindari overflow di sudut tabel */
+}
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
+    vertical-align: middle;
+}
+th {
+    background-color: #00796b; /* Background teal untuk header tabel */
+    color: #ffffff; /* Warna teks putih untuk header */
+    font-size: 1.1em;
+}
+td {
+    background-color: #ffffff; /* Background putih untuk sel tabel */
+    color: #555; /* Warna teks lebih gelap untuk kontras */
+}
+img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #00796b; /* Border teal di sekitar gambar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow ringan di sekitar gambar */
+}
+input[type="date"],
+input[type="number"] {
+    padding: 10px;
+    border: 2px solid #004d40; /* Border teal gelap untuk input */
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em; /* Ukuran font untuk input */
+}
+input[type="radio"] {
+    margin-right: 10px;
+}
+.footer {
+    background-color: #b2dfdb; /* Background teal muda untuk footer */
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #00796b; /* Border atas footer */
+}
+.footer b {
+    color: #004d40; /* Warna teks bold di footer */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    margin: 10px 0;
+    color: #004d40; /* Warna teks gelap untuk item list */
+    font-size: 1em;
+}
+a {
+    color: #00796b; /* Warna tautan teal */
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+    color: #004d40; /* Warna tautan saat hover */
+}
+/* Header tabel (judul) */
+.table-title {
+    background-color: #004d40; /* Background teal gelap untuk baris judul */
+    color: #ffffff; /* Warna teks putih untuk baris judul */
+    text-align: center;
+    padding: 15px 0;
+}
+.table-title img {
+    width: 150px;
+    border-radius: 10px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    th {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #00796b;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.2em;
+    }
+    td {
+        border-bottom: 2px solid #e0e0e0;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        background-color: #00796b;
+        color: #ffffff;
+        text-align: left;
+    }
+}

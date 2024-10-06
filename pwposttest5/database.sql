@@ -1,0 +1,10 @@
+CREATE DATABASE musik;
+
+USE musik;
+
+CREATE TABLE students (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    course VARCHAR(50) NOT NULL
+);
